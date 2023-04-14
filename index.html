@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Fitness Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="static/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="static/style.css" />
+  </head>
+  <body>
+    <form action="" method="post" id="login-form" class="g-2 p-3 rounded">
+      <div class="col-md-10">
+        <input
+          type="text"
+          class="form-control"
+          id="first-name"
+          name="first-name"
+          required
+          placeholder=" First Name "
+        />
+      </div>
+      <div class="col-md-10">
+        <input
+          type="text"
+          class="form-control"
+          id="last-name"
+          name="last-name"
+          required
+          placeholder=" Last Name "
+        />
+      </div>
+
+      <div class="col-md-6" id="#radiobody">
+        <div id="gender">
+          <label for="gender" class="form-label" id="genderlabel">Gender</label>
+          <div>
+            <label class="rad-label">
+              <input
+                type="radio"
+                class="rad-input"
+                name="rad"
+                id="male"
+                value="male"
+                required
+              />
+              <div class="rad-design"></div>
+              <div class="rad-text">Male</div>
+            </label>
+
+            <label class="rad-label">
+              <input
+                type="radio"
+                class="rad-input"
+                name="rad"
+                id="female"
+                value="female"
+                required
+              />
+              <div class="rad-design"></div>
+              <div class="rad-text">Female</div>
+            </label>
+
+            <label class="rad-label">
+              <input
+                type="radio"
+                class="rad-input"
+                name="rad"
+                id="other"
+                value="other"
+                required
+              />
+              <div class="rad-design"></div>
+              <div class="rad-text">Other</div>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn" id="button">Sign up</button>
+      </div>
+    </form>
+
+    <!--  ----------------------------------------------------------------------------------------------- -->
+    <div class="container content" style="display: none">
+      <!-- Welcome div -->
+      <div class="row my-4">
+        <div class="welcome" style="font-size: 30px; color: white">
+          <h1
+            id="welcomeMeassage"
+            style="font-size: 30px; display: block !important"
+          >
+            Welcome, <span class="full-name"></span>! <br />
+          </h1>
+          <br />
+          <br />
+          <p st>Today is <span class="date"></span>.</p>
+        </div>
+      </div>
+
+      <!-- Meals and workouts div -->
+      <div class="row my-4">
+        <!-- card for workout form  -->
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h3
+                id="workouttitle"
+                style="
+                  color: #d537ae;
+                  font-family: Arial, sans-serif;
+                  font-size: 36px;
+                  font-weight: bold;
+                  margin-bottom: 10px !important;
+                "
+              >
+                Workouts
+              </h3>
+              <br />
+              <form method="get" action="/workout" class="workout_form">
+                <div class="form-group">
+                  <label for="workout_type"> workout type:</label>
+                  <select
+                    class="form-control"
+                    id="workout_type"
+                    name="workout_type"
+                    required
+                    style="font-size: 20px; font-weight: 600; width: 50%"
+                  >
+                    <option value="" style="font-size: 20px; font-weight: 600">
+                      Choose workout type
+                    </option>
+                    <option value="cardio">Cardio</option>
+                    <option value="strength-training">Strength Training</option>
+                    <option value="flexibility">Flexibility</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="workout_name">Name:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="workout_name"
+                    name="workout_name"
+                    required
+                  />
+
+                  <label for="workout_weight">weight (in kilogrames):</label>
+                  <input
+                    type="number"
+                    step="1"
+                    min="0"
+                    class="form-control"
+                    id="workout_weight"
+                    name="workout_weight"
+                    placeholder="0 kg"
+                    required
+                  />
+                  <label for="workout_height">height (in cm):</label>
+                  <input
+                    type="number"
+                    step=".1"
+                    min="0"
+                    class="form-control"
+                    id="workout_height"
+                    name="workout_height"
+                    required
+                  />
+                  <label for="workout_duration">Duration (in minutes):</label>
+                  <input
+                    type="number"
+                    step=".1"
+                    min="0"
+                    class="form-control"
+                    id="workout_duration"
+                    name="workout_duration"
+                    placeholder="00 mins"
+                    required
+                  />
+                  <input
+                    type="submit"
+                    class="btn btn-success mr-2"
+                    id="workout-btn"
+                    value="Add Workout"
+                  />
+                </div>
+              </form>
+              <br />
+              <table class="table">
+                <thead>
+                  <tr
+                    style="
+                      font-size: 25px;
+                      background: linear-gradient(
+                        90deg,
+                        rgba(212, 55, 78, 0.454) 0%,
+                        rgba(101, 44, 69, 0.569) 59%,
+                        rgba(252, 250, 252, 0.589) 100%
+                      );
+                    "
+                  >
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Calories Loss</th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  $$[[WORKOUT]]$$
+                </tbody>
+              </table>
+              <br />
+              <h3
+                style="
+                  color: #d537ae;
+                  font-family: Arial, sans-serif;
+                  font-size: 36px;
+                  font-weight: bold;
+                  margin-bottom: 10px !important;
+                "
+              >
+                total calories loss :
+              </h3>
+              <p style="font-size: 40px; font-weight: 600">
+                $$[[ALLWORKOUT]]$$ Calories
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- card for meals form  -->
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h3
+                style="
+                  color: #07ab33;
+                  font-family: Arial, sans-serif;
+                  font-size: 36px;
+                  font-weight: bold;
+                  margin-bottom: 10px !important;
+                "
+              >
+                Meals
+              </h3>
+              <br />
+              <form method="get" action="/submit" class="meals">
+                <label for="meal-type">Meal Type:</label>
+                <select
+                  class="form-control"
+                  id="meal-type"
+                  name="meal_type"
+                  required
+                  style="font-size: 20px; font-weight: 600; width: 50%"
+                >
+                  <option value="" style="font-size: 20px; font-weight: 600">
+                    Choose a meal type
+                  </option>
+                  <option value="breakfast">Breakfast</option>
+                  <option value="lunch">Lunch</option>
+                  <option value="snack">Snack</option>
+                  <option value="dinner">Dinner</option>
+                </select>
+
+                <label for="meal-name">Name:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="meal-name"
+                  name="meal_name"
+                  required
+                />
+
+                <label for="meal-fats">Fats:</label>
+                <input
+                  type="number"
+                  step="0.1"
+                  min="0"
+                  class="form-control"
+                  id="meal-fats"
+                  name="meal_fats"
+                  placeholder="enter in (gm)"
+                  required
+                />
+
+                <label for="meal-protein">Protein:</label>
+                <input
+                  type="number"
+                  step="0.1"
+                  min="0"
+                  class="form-control"
+                  id="meal-protein"
+                  name="meal_protein"
+                  placeholder="enter in (gm)"
+                  required
+                />
+
+                <label for="carbohydrates">carbohydrates:</label>
+                <input
+                  type="number"
+                  step="0.1"
+                  min="0"
+                  class="form-control"
+                  id="carbohydrates"
+                  name="carbohydrates"
+                  placeholder="enter in (gm)"
+                  required
+                />
+
+                <input
+                  type="submit"
+                  class="btn mr-2"
+                  id="btn_meals"
+                  value="Add Meal"
+                />
+              </form>
+              <br />
+              <table class="table">
+                <thead>
+                  <tr
+                    style="
+                      font-size: 25px;
+                      background: linear-gradient(
+                        90deg,
+                        rgba(78, 212, 55, 0.454) 0%,
+                        rgba(44, 101, 44, 0.569) 59%,
+                        rgba(250, 252, 250, 0.589) 100%
+                      );
+                    "
+                  >
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Calories Gained</th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  $$[MAHA]$$
+                </tbody>
+              </table>
+              <br />
+              <h3
+                style="
+                  color: #07ab33;
+                  font-family: Arial, sans-serif;
+                  font-size: 36px;
+                  font-weight: bold;
+                  margin-bottom: 10px !important;
+                "
+              >
+                total calories gained :
+              </h3>
+              <p style="font-size: 40px; font-weight: 600">
+                $$[[ALLMEAL]]$$ Calories
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="row my-4">
+        <div class="col" id="BMI">
+          <h3>BMI For Latest Record :</h3>
+          <br />
+          <p style="font-size: 30px; font-weight: 600; color: red">
+            $$[[BMI]]$$
+          </p>
+          <br />
+          <h5>
+            BMI Categories: <br />
+            Underweight  <span>&#60;</span> 18.5 <br />Normal weight = 18.5 :
+            24.9<br />
+            Overweight = 25 : 29.9 <br />Obesity = BMI of 30 or greater
+          </h5>
+        </div>
+      </div>
+      <!-- Total daily calories div -->
+      <div class="row my-4">
+        <div
+          class="col"
+          style="
+            background-color: rgba(255, 255, 255, 0.519);
+            border: 1px solid white;
+          "
+        >
+          <h2 style="font-size: 70px">Total daily Calories:</h2>
+          <p style="font-size: 60px; color: red; font-weight: 600">
+            $$[total]$$
+          </p>
+        </div>
+      </div>
+      <!-- Progress history and sign out buttons -->
+      <div class="row my-4">
+        <div class="col">
+          <button type="button" class="btn btn-danger">Sign Out</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="static/script.js"></script>
+    <script src="static/popper.min.js"></script>
+    <script src="static/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+[
+ {
+  "id": 1,
+  "type": "strength-training",
+  "name": "runing",
+  "duration": 30.0,
+  "weight": 70.0,
+  "height": 170.0,
+  "calories": 257.25
+ },
+ {
+  "id": 2,
+  "type": "flexibility",
+  "name": "yoga",
+  "duration": 70.0,
+  "weight": 50.0,
+  "height": 130.0,
+  "calories": 428.75
+ }
+]

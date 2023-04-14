@@ -1,0 +1,20 @@
+[
+ {
+  "id": 1,
+  "type": "snack",
+  "name": "rice",
+  "fat": 7.0,
+  "protein": 8.0,
+  "carbohydrates": 9.0,
+  "calories": 131.0
+ },
+ {
+  "id": 2,
+  "type": "lunch",
+  "name": "egg",
+  "fat": 5.0,
+  "protein": 4.0,
+  "carbohydrates": 2.0,
+  "calories": 69.0
+ }
+]
