@@ -2,7 +2,7 @@
 
 A one or two sentence description of your project here.
 
-- What does it do?  
+
   It is a tracking fitness progress , it calculates the calories in meals and calories in workout and finally calculates the daily calories spent
 
 - What is the "new feature" which you have implemented that we haven't seen before?  
@@ -41,5 +41,5 @@ List those here (if any).
 - [x] It doesn't generate any error message even if the user enters a wrong input.
 - [x] The code follows the code and style conventions as introduced in the course, is fully documented using comments and doesn't contain unused or experimental code.
       In particular, the code should not use `print()` or `console.log()` for any information the app user should see. Instead, all user feedback needs to be visible in the browser.
-- [x] All exercises have been completed as per the requirements and pushed to the respective GitHub repository.
+
 "# Fitness-Progress-" 
